@@ -23,9 +23,9 @@ const DisplayMusic = (props) => {
                                 <td>{song.album}</td>
                                 <td>{song.artist}</td>
                                 <td>{song.genre}</td>
-                                <td>{song.id}</td>
                                 <td>{song.release_date}</td>
                                 <td>{song.title}</td>
+                                <button>delete</button>
                             </tr>
                         )
                     }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import axios from 'axios';
 import DisplayMusic from './Components/DisplayMusic/DisplayMusic';
+import AddSong from './Components/DisplayMusic/AddSong/AddSong';
 
 
 function App() {
@@ -27,9 +28,10 @@ catch (ex) {
   return (
     <div>
       <DisplayMusic music={music} />
+      <AddSong />
       <h1>nav bar</h1>
       <h1>search bar</h1>
-      <h1>DisplayMusic</h1>
+      
 
     </div>
   );
