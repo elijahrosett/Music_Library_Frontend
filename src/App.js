@@ -12,17 +12,21 @@ useEffect(() => {
 }, [])
 
 async function getAllMusic(){
-  let response = await axios.get('http://127.0.0.1:8000/api/music');
+  try{
+  let response = await axios.get('http://127.0.0.1:8000/api/music/');
   setMusic(response.data);
   console.log(response.data)
 }
-
+catch (ex) {
+  console.log('there is an error', ex)
+}
+}
 
 
 
   return (
     <div>
-      <DisplayMusic />
+      <DisplayMusic music={music} />
       <h1>nav bar</h1>
       <h1>search bar</h1>
       <h1>DisplayMusic</h1>

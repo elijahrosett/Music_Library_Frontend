@@ -4,7 +4,36 @@ const DisplayMusic = (props) => {
 
       
     return ( 
-        <p>this is from display music {props.music}</p>
+        <div>
+            <table>
+                <thread>
+                    <tr>
+                    <th>Album</th>
+                    <th>Artist</th>
+                    <th>Genre</th>
+                    <th>Song ID</th>
+                    <th>Release Date</th>
+                    <th>Title</th>
+                    </tr>
+                </thread>
+                <tbody>
+                    {props.music.map((song) => {
+                        return (
+                            <tr>
+                                <td>{song.album}</td>
+                                <td>{song.artist}</td>
+                                <td>{song.genre}</td>
+                                <td>{song.id}</td>
+                                <td>{song.release_date}</td>
+                                <td>{song.title}</td>
+                            </tr>
+                        )
+                    }
+                    )}
+             
+                </tbody>
+            </table>
+        </div>
 
         
     );}
