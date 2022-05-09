@@ -17,6 +17,7 @@ function handleSubmit(event){
         title: title
     };
     console.log(newSong)
+    props.addNewSong(newSong)
 }
 
     return ( 
