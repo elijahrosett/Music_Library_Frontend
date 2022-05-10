@@ -23,7 +23,31 @@ useEffect(() => {
   getAllMusic();
 }, [])
 
-
+function filterMusic(filter){
+  if (music.filter(element => element.album === filter).length > 0){
+  let tempMusic = music.filter(element => element.album.includes(filter));
+  setMusic(tempMusic);
+  }
+  else if (music.filter(element => element.artist === filter).length > 0){
+  let tempMusic = music.filter(element => element.artist.includes(filter));
+  setMusic(tempMusic);
+  }
+  else if (music.filter(element => element.genre === filter).length > 0){
+  let tempMusic = music.filter(element => element.genre.includes(filter));
+  setMusic(tempMusic);
+  }
+  else if (music.filter(element => element.release_date === filter).length > 0){
+  let tempMusic = music.filter(element => element.release_date.includes(filter));
+  setMusic(tempMusic);
+  }
+  else if (music.filter(element => element.title === filter).length > 0){
+  let tempMusic = music.filter(element => element.title.includes(filter));
+  setMusic(tempMusic);
+  }
+else{
+  alert('That search does not match any music')
+}
+}
 
 async function getAllMusic(){
   try{
@@ -40,10 +64,11 @@ catch (ex) {
 
   return (
     <div>
+      <SearchBar filterMusic={filterMusic} />
       <DisplayMusic music={music} />
       <AddSong addNewSong={addNewSong}/>
-      <SearchBar />
-      <h1>search bar</h1>
+      
+      
       
 
     </div>

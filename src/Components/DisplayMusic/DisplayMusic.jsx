@@ -17,7 +17,7 @@ const DisplayMusic = (props) => {
                     </tr>
                 </thread>
                 <tbody>
-                    {if (filter == )}
+                    
                     {props.music.map((song) => {
                         return (
                             <tr>
